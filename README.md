@@ -5,9 +5,13 @@
 
 Fork this repo, and clone your copy.
 
-Make a branch where you can work on your code. Commit little and often - AT LEAST ONE COMMIT PER EXERCISE!
+Make a branch where you can work on your code.
 
-Push that branch, make a pull request, and review your code. Merge it to main when you're happy with your project!
+Commit little and often - AT LEAST ONE COMMIT PER EXERCISE!
+
+When you're ready to review your code, push the branch and make a pull request.
+
+Merge it to main when you're happy with your code.
 
 ## Part 1: Validation Functions
 

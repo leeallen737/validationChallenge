@@ -1,6 +1,14 @@
 
 # Validation Challenge
 
+### How to use
+
+Fork this repo, and clone your copy.
+
+Make a branch where you can work on your code. Commit little and often - AT LEAST ONE COMMIT PER EXERCISE!
+
+Push that branch, make a pull request, and review your code. Merge it to main when you're happy with your project!
+
 ## Part 1: Validation Functions
 
 Make validation functions as specified below. Each function
@@ -112,3 +120,15 @@ Display error messages under the field causing the error.
 Error message should display in red.
 
 Never display more than one error per field.
+
+## Bonus github challenge
+
+Make a branch on your copy of the repository.
+
+Remove the "How to use" section at the top, and add your own description of the project instead.
+
+Feel free to add screenshots (look up "how to add images to markdown"), gifs, emojis and instructions.
+
+Add a link to preview the project at `https://htmlpreview.github.io?link-to-your-html-file-on-github`
+
+Something like [this](https://htmlpreview.github.io?https://github.com/BathSpaWebDev/validationChallenge/blob/main/index.html)!

@@ -96,6 +96,8 @@ Favourite Colour
 On submit, as well as displaying the hex code and other form values on the page,
 change the colour of the page to match the value of the colour field.
 
+# Bonus exercises
+
 ## Bonus colour challenge
 
 Make your colour field accept other hex colour formats:
@@ -124,6 +126,10 @@ Display error messages under the field causing the error.
 Error message should display in red.
 
 Never display more than one error per field.
+
+## Bonus string validation and key events
+
+Prevent the nickname and pet fields from typing numbers.
 
 ## Bonus github challenge
 

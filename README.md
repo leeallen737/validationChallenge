@@ -131,6 +131,10 @@ Never display more than one error per field.
 
 Prevent the nickname and pet fields from typing numbers.
 
+## Bonus HTML5 validation practice
+
+Add HTML5 validation attributes (max/min/maxLength/required) to your form.
+
 ## Bonus github challenge
 
 Make a branch on your copy of the repository.

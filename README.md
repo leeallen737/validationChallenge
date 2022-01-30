@@ -1,3 +1,10 @@
+**************************************************
+
+YOU CAN SEE MY PROJECT AT GITHUB PAGES HERE
+https://leeallen737.github.io/validationChallenge/
+
+**************************************************
+
 
 # Validation Challenge
 

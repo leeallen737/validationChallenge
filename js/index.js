@@ -134,20 +134,23 @@ form.addEventListener('submit', (event) => {
         errorMessagePetname.parentNode.className = 'success';
     }
 
-    if(nickName.value && age.value && faveColor.value && teesandcees.checked) {
-        
+    
 
+    if(nickName.value && age.value && faveColor.value && teesandcees.checked) {
         const ifPetName = () => {
             if(pet.checked) {
                 return `my pet is called ${petName.value}`;
+            }else {
+                return '';
             }
         }
-
         messageBox.innerHTML = `Hi my nickname is: ${nickName.value},<br>
                             my age is: ${age.value}<br>
                             my favourite colour is ${faveColor.value},<br>
                             ${ifPetName()}`;
+
+        form.reset();
     }
 
-    form.reset();
+    
 })

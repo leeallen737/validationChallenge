@@ -136,11 +136,17 @@ body {
 }
 
 #message-box {
+    display: none;
     margin: 0 30px;
     padding: 40px;
     width: 400px;
     background-color: #fff;
     font-size: 20px;
+    text-align: center;
+}
+
+#message-box.visible {
+    display: block;
 }
 
 #success {

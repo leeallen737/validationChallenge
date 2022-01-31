@@ -154,6 +154,8 @@ form.addEventListener('submit', (event) => {
                 return '';
             }
         }
+
+        messageBox.className = 'visible';
         
         messageBox.innerHTML = `Hi my nickname is: ${nickName.value},<br>
                             my age is: ${age.value}<br>

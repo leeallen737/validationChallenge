@@ -52,11 +52,11 @@ const testRequired = () => {
         const validNumberZero = required(0)
         test("CASE 5: VALID VALUE (NUMBER ZERO)", undefined, validNumberZero)
 
-        const validTrue = required(0)
-        test("CASE 5: VALID VALUE (BOOLEAN TRUE)", undefined, validTrue)
+        const validTrue = required(true)
+        test("CASE 6: VALID VALUE (BOOLEAN TRUE)", undefined, validTrue)
 
-        const invalidFalse = required(0)
-        test("CASE 5: INVALID VALUE (BOOLEAN FALSE)", "This field is required", invalidFalse)
+        const invalidFalse = required(false)
+        test("CASE 7: INVALID VALUE (BOOLEAN FALSE)", "This field is required", invalidFalse)
     })
 }
 

@@ -90,10 +90,15 @@ body {
     color: #e74c3c;
 }
 
-/* #form-container #petname {
+#form-container #petname {
     display: none;
     
-} */
+}
+
+#form-container #petname.visible {
+    display: block;
+    
+}
 
 #form-container.teesandcees {
     font-size: 12px!important;

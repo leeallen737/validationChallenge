@@ -30,19 +30,13 @@ const maxLength20 = (value) => {
 }
 
 const hexColorStartsWithHash = (value) => {
-    // const charCheck = ['a', 'b', 'c', 'd', 'e', 'f', 0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    
     if(value[0] !== '#') {
         return "Must be a hex colour e.g #ffffff";
     }else if(!value.match("^[#a-fA-F0-9]+$")){
         return "Must be characters 0-9 or A-F";
     }
 }
-
-// const regExColour = (value) => {
-//     if(!value.match("^[#a-fA-F0-9]+$")){
-//             return "Must be characters 0-9 or A-F";
-//         }
-// }
 
 const body = document.querySelector('body');
 const form = document.getElementById('form');
@@ -52,14 +46,22 @@ const faveColor = document.getElementById('color');
 const teesandcees = document.getElementById('teesandcees');
 const messageBox = document.getElementById('message-box');
 const pet = document.getElementById('pet');
-const petName = document.getElementById('pet-name');
+const petName = document.getElementById('petname');
+
+//make pet name visible if pet is checked
+pet.addEventListener('click', (event) => {
+    if(pet.checked) {
+        petName.classList.add('visible');
+    }else {
+        petName.classList.remove('visible');
+    }
+})
 
 
-// petName.style.display = block;
-// if (pet.checked) {
-//     petName.style.display = 'block';
-//     console.log('hello')
-// }
+if(pet.checked) {
+    petName.classList('visible');
+}
+
 console.log(pet.checked)
 form.addEventListener('submit', (event) => {
     event.preventDefault();

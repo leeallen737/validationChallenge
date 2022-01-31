@@ -121,9 +121,33 @@ form.addEventListener('submit', (event) => {
                             my favourite colour is ${faveColor.value}`;
     }
 //******************************************/
+    const petNameMaxLetters = maxLength20(petName.value);
+    const petNameRequired = required(petName.value);
     
-   
+    //error
+    const errorMessagePetname = document.getElementById('petname-error');
     
+    if(pet.checked && petNameRequired || petNameMaxLetters) {
+        errorMessagePetname.parentNode.className = 'error';
+        errorMessagePetname.innerHTML = petNameRequired || petNameMaxLetters;
+    }else if(pet.checked) {
+        errorMessagePetname.parentNode.className = 'success';
+    }
+
+    if(nickName.value && age.value && faveColor.value && teesandcees.checked) {
+        
+
+        const ifPetName = () => {
+            if(pet.checked) {
+                return `my pet is called ${petName.value}`;
+            }
+        }
+
+        messageBox.innerHTML = `Hi my nickname is: ${nickName.value},<br>
+                            my age is: ${age.value}<br>
+                            my favourite colour is ${faveColor.value},<br>
+                            ${ifPetName()}`;
+    }
 
     form.reset();
 })

@@ -90,7 +90,7 @@ body {
     color: #e74c3c;
 }
 
-#form-container #petname {
+#form-container #petname{
     display: none;
     
 }
@@ -101,15 +101,19 @@ body {
 }
 
 #form-container.teesandcees {
-    font-size: 12px!important;
-    display: flex!important;
-    justify-content: space-between!important;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
 }
 
 #form-container.pet {
     font-size: 12px;
     display: flex;
     justify-content: space-between;
+}
+
+#tsandCs {
+    font-size: 12px;
 }
 
 #form-container.teesandcees input {

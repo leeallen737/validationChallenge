@@ -51,18 +51,18 @@
                 <input id="pet" name="pet"type="checkbox" value="">
             </div>
 
-            <div id="form-container">
+            <div id="form-container" classname="petname">
                 <!--        Pet name                               -->
                 <!-- <label for="petname">Pet Name</label> -->
                 <input id="petname" name="petname" placeholder="Pet Name" type="text" value="">
+                <i class="fas fa-check-circle"></i>
+                <small class="invisibleError" id="petname-error">my error goes here</small>
             </div>
 
             <div id="form-container" class="teesandcees" >
                 <!--        I have read the terms and conditions   -->
-                <label for="teesandcees">I have read the terms and conditions</label>
+                <label id="tsandCs" for="teesandcees">I have read the terms and conditions</label>
                 <input type="checkbox" name="teesandcees" id="teesandcees">
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
                 <small id="checkbox-error">my error goes here</small>
             </div>
 

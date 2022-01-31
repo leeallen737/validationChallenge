@@ -39,6 +39,14 @@ const hexColorStartsWithHash = (value) => {
     }
 }
 
+const validateLetters = (value) => {
+    if(!isNaN(value)) {
+        return "Must be a Letters Only";
+    }else {
+        console.log('its a letter ;)')
+    }
+}
+
 
 //form selectors
 const body = document.querySelector('body');
@@ -67,12 +75,13 @@ form.addEventListener('submit', (event) => {
     //nickname, required, maximum length of 20 characters
     const nicknameRequired = required(nickName.value);
     const nickNameMaxLength = maxLength20(nickName.value);
+    const nickNameIsLetters = validateLetters(nickName.value);
     //for the error message
     const errorMessageNickname = document.getElementById('nickname-error');
 
-    if(nicknameRequired || nickNameMaxLength) {
+    if(nicknameRequired || nickNameMaxLength || nickNameIsLetters) {
         nickName.parentNode.className = 'error';
-        errorMessageNickname.innerHTML = nicknameRequired || nickNameMaxLength;
+        errorMessageNickname.innerHTML = nicknameRequired || nickNameMaxLength || nickNameIsLetters;
     }else {
         nickName.parentNode.className = 'success';
     }
@@ -123,13 +132,14 @@ form.addEventListener('submit', (event) => {
 //******************************************/
     const petNameMaxLetters = maxLength20(petName.value);
     const petNameRequired = required(petName.value);
+    const petNameIsLetters = validateLetters(petName.value);
     
     //error
     const errorMessagePetname = document.getElementById('petname-error');
     
-    if(pet.checked && petNameRequired || petNameMaxLetters) {
+    if(pet.checked && petNameRequired || petNameMaxLetters || petNameIsLetters) {
         errorMessagePetname.parentNode.className = 'error';
-        errorMessagePetname.innerHTML = petNameRequired || petNameMaxLetters;
+        errorMessagePetname.innerHTML = petNameRequired || petNameMaxLetters || petNameIsLetters;
     }else if(pet.checked) {
         errorMessagePetname.parentNode.className = 'success';
     }
@@ -144,11 +154,12 @@ form.addEventListener('submit', (event) => {
                 return '';
             }
         }
+        
         messageBox.innerHTML = `Hi my nickname is: ${nickName.value},<br>
                             my age is: ${age.value}<br>
                             my favourite colour is ${faveColor.value},<br>
                             ${ifPetName()}`;
-
+        success.innerHTML = 'Success'
         form.reset();
     }
 

@@ -3,20 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <title>Validation Challenge</title>
-    <script defer src="index.js"></script>
-    <script defer src="tests.js"></script>
+    <script defer src="./js/index.js"></script>
+    <script defer src="./js/tests.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1e8ca7a8a2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
-<!--        Nickname                               -->
-<!--        Age                                    -->
-<!--        Favourite Colour                       -->
-<!--        I have a pet                           -->
-<!--        Pet name                               -->
-<!--        I have read the terms and conditions   -->
+    <div id="container">
+        <div id="header">
+            <h2>About me</h2>
+        </div>
+        <form id="form" action="">
+            <div id="form-container">
+                <!--        Nickname                               -->
+                <!-- <label for="nickname">Nickname</label> -->
+                <input id="nickname" name="nickname" placeholder="Nickname" type="text" value="">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small id="nickname-error">my error goes here</small>
+            </div>
 
-<h1>Nothing to see here yet...</h1>
+            <div id="form-container">
+                <!--        Age                                    -->
+                <!-- <label for="number">Age</label> -->
+                <input id="age" name="age" placeholder="Age" type="text" value="">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small id="age-error">my error goes here</small>
+            </div>
 
-<p>Pst! Open the console to see the tests.</p>
+            <div id="form-container">
+                <!--        Favourite Colour                       -->
+                <!-- <label for="color">Favourite Colour</label> -->
+                <input id="color" name="color" placeholder="Favourite Colour" type="text" value="">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small id="color-error">my error goes here</small>
+            </div>
+
+            <div id="form-container" class="pet">
+                <!--        I have a pet                           -->
+                <label for="pet">I have a pet</label>
+                <input id="pet" name="pet"type="checkbox" value="">
+            </div>
+
+            <div id="form-container">
+                <!--        Pet name                               -->
+                <!-- <label for="petname">Pet Name</label> -->
+                <input id="petname" name="petname" placeholder="Pet Name" type="text" value="">
+            </div>
+
+            <div id="form-container" class="teesandcees" >
+                <!--        I have read the terms and conditions   -->
+                <label for="teesandcees">I have read the terms and conditions</label>
+                <input type="checkbox" name="teesandcees" id="teesandcees">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small id="checkbox-error">my error goes here</small>
+            </div>
+
+                <!--        Submit Button                          -->
+                <button id="submit" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <div>
+        <p id="message-box"></p>
+    </div>
 
 </body>
 </html>

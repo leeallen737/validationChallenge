@@ -1,3 +1,4 @@
+// Validation Functions
 
 const required = (value) => {
     if (value === '' || value === undefined || value === false){
@@ -38,6 +39,8 @@ const hexColorStartsWithHash = (value) => {
     }
 }
 
+
+//form selectors
 const body = document.querySelector('body');
 const form = document.getElementById('form');
 const nickName = document.getElementById('nickname');
@@ -56,13 +59,8 @@ pet.addEventListener('click', (event) => {
         petName.classList.remove('visible');
     }
 })
-
-
-if(pet.checked) {
-    petName.classList('visible');
-}
-
-console.log(pet.checked)
+//******************************************/
+//This code below is for the submit event
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     
@@ -78,19 +76,20 @@ form.addEventListener('submit', (event) => {
     }else {
         nickName.parentNode.className = 'success';
     }
-
+//******************************************/
     //age, not required, must be a number
     const ageMustBeANumber = validateNumber(age.value);
+    const overZeroUnder100 = zeroToOneHundred(age.value);
     //for the error message
     const errorMessageAge = document.getElementById('age-error');
 
-    if(ageMustBeANumber) {
+    if(ageMustBeANumber || overZeroUnder100) {
         age.parentNode.className = 'error';
-        errorMessageAge.innerHTML = ageMustBeANumber;
+        errorMessageAge.innerHTML = ageMustBeANumber || overZeroUnder100;
     } else {
         age.parentNode.className = 'success';
     }
-    
+//******************************************/  
     //terms and conditions, required, must be a checkbox
     const teesandceesRequired = required(teesandcees.checked);
     //for the error message
@@ -102,7 +101,7 @@ form.addEventListener('submit', (event) => {
     } else {
         errorMessageCheckBox.parentNode.className = 'success';
     }
-
+//******************************************/
     //favourite color, required, must be hex
     const faveColorRequired = required(faveColor.value);
     const firstCharHex = hexColorStartsWithHash(faveColor.value);
@@ -121,8 +120,8 @@ form.addEventListener('submit', (event) => {
                             my age is: ${age.value}<br>
                             my favourite colour is ${faveColor.value}`;
     }
-
-    //pet, has a pet? Pet name required if pet is checked.
+//******************************************/
+    
    
     
 

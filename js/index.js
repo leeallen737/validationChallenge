@@ -3,16 +3,12 @@
 const required = (value) => {
     if (value === '' || value === undefined || value === false){
        return 'This field is required' 
-    }else {
-        console.log('cool nickname')
     }
 }
 
 const validateNumber = (value) => {
     if(value && isNaN(value)) {
         return "Must be a number";
-    }else {
-        console.log('its a number ;)')
     }
 }
 
@@ -25,8 +21,6 @@ const zeroToOneHundred = (value) => {
 const maxLength20 = (value) => {
     if(value &&  value.length > 19) {
        return "Must be less than 20 characters long";
-    }else {
-        console.log('perfect less than 20')
     }
 }
 
@@ -42,17 +36,27 @@ const hexColorStartsWithHash = (value) => {
 const validateLetters = (value) => {
     if(!isNaN(value)) {
         return "Must be a Letters Only";
-    }else {
-        console.log('its a letter ;)')
     }
 }
 
-// const checkColor3or6Char = (value) => {
-//     if(value.length !== 4 || value.length !== 7) {
-//         return "Must be 3 or 6 characters after the hash";
-//     } 
-// }
+const checkColor3or6Char = (value) => {
+    if(value.length === 3 || value.length === 6) {
+        return "Must be 3 or 6 characters after the hash";
+    } 
+}
 
+const turn3Into6Hash = (value) => {
+    if(value.length === 4) {
+        const chars = value.split('');
+        chars.push(chars[1], chars[2], chars[3]);
+        const str = chars.join('');
+        return str;
+    }else if (value.length === 7){
+        return value;
+    }else {
+        return value;
+    }
+}
 
 //form selectors
 const body = document.querySelector('body');
@@ -64,6 +68,8 @@ const teesandcees = document.getElementById('teesandcees');
 const messageBox = document.getElementById('message-box');
 const pet = document.getElementById('pet');
 const petName = document.getElementById('petname');
+
+
 
 //make pet name visible if pet is checked
 pet.addEventListener('click', (event) => {
@@ -78,7 +84,7 @@ pet.addEventListener('click', (event) => {
 //This code below is for the submit event
 form.addEventListener('submit', (event) => {
     event.preventDefault();
-    
+    // turn3Into6Hash(faveColor.value)
     //nickname, required, maximum length of 20 characters
     const nicknameRequired = required(nickName.value);
     const nickNameMaxLength = maxLength20(nickName.value);
@@ -121,14 +127,14 @@ form.addEventListener('submit', (event) => {
     //favourite color, required, must be hex, 3 or 6 characters only
     const faveColorRequired = required(faveColor.value);
     const firstCharHex = hexColorStartsWithHash(faveColor.value);
-    // const threeOrSixCharsOnly = checkColor3or6Char(faveColor.value);
+    const threeOrSixCharsOnly = checkColor3or6Char(faveColor.value);
     // const regExColourCheck = regExColour(faveColor.value);
     //for the error message
     const errorMessageColor = document.getElementById('color-error');
 
-    if(faveColorRequired || firstCharHex) {
+    if(threeOrSixCharsOnly || faveColorRequired || firstCharHex) {
         errorMessageColor.parentNode.className = 'error';
-        errorMessageColor.innerHTML = faveColorRequired || firstCharHex;
+        errorMessageColor.innerHTML = threeOrSixCharsOnly || faveColorRequired || firstCharHex;
     } else {
         errorMessageColor.parentNode.className = 'success';
         body.style.backgroundColor = faveColor.value;
@@ -152,13 +158,13 @@ form.addEventListener('submit', (event) => {
         errorMessagePetname.parentNode.className = 'success';
     }
 
-    const petCheckedandPetNameValueTrue = () => {
-        if(pet.checked && petName.value) {
-        return true;
-    }else {
-        return false;
-    }
-}
+//     const petCheckedandPetNameValueTrue = () => {
+//         if(pet.checked && petName.value) {
+//         return true;
+//     }else {
+//         return false;
+//     }
+// }
 
     if(nickName.value && age.value && faveColor.value && teesandcees.checked) {
         const ifPetName = () => {
@@ -173,7 +179,7 @@ form.addEventListener('submit', (event) => {
         
         messageBox.innerHTML = `Hi my nickname is: ${nickName.value},<br>
                             my age is: ${age.value}<br>
-                            my favourite colour is ${faveColor.value},<br>
+                            my favourite colour is ${turn3Into6Hash(faveColor.value)},<br>
                             ${ifPetName()}`;
         success.innerHTML = 'Success'
         form.reset();
@@ -181,3 +187,5 @@ form.addEventListener('submit', (event) => {
 
     
 })
+
+

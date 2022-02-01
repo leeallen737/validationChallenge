@@ -47,6 +47,12 @@ const validateLetters = (value) => {
     }
 }
 
+// const checkColor3or6Char = (value) => {
+//     if(value.length !== 4 || value.length !== 7) {
+//         return "Must be 3 or 6 characters after the hash";
+//     } 
+// }
+
 
 //form selectors
 const body = document.querySelector('body');
@@ -67,6 +73,7 @@ pet.addEventListener('click', (event) => {
         petName.classList.remove('visible');
     }
 })
+
 //******************************************/
 //This code below is for the submit event
 form.addEventListener('submit', (event) => {
@@ -105,15 +112,16 @@ form.addEventListener('submit', (event) => {
     const errorMessageCheckBox = document.getElementById('checkbox-error');
 
     if(teesandceesRequired) {
-        errorMessageCheckBox.parentNode.className = 'error';
+        errorMessageCheckBox.parentNode.className = 'teesandcees error';
         errorMessageCheckBox.innerHTML = teesandceesRequired;
     } else {
-        errorMessageCheckBox.parentNode.className = 'success';
+        errorMessageCheckBox.parentNode.className = 'teesandcees success';
     }
 //******************************************/
-    //favourite color, required, must be hex
+    //favourite color, required, must be hex, 3 or 6 characters only
     const faveColorRequired = required(faveColor.value);
     const firstCharHex = hexColorStartsWithHash(faveColor.value);
+    // const threeOrSixCharsOnly = checkColor3or6Char(faveColor.value);
     // const regExColourCheck = regExColour(faveColor.value);
     //for the error message
     const errorMessageColor = document.getElementById('color-error');
@@ -144,7 +152,13 @@ form.addEventListener('submit', (event) => {
         errorMessagePetname.parentNode.className = 'success';
     }
 
-    
+    const petCheckedandPetNameValueTrue = () => {
+        if(pet.checked && petName.value) {
+        return true;
+    }else {
+        return false;
+    }
+}
 
     if(nickName.value && age.value && faveColor.value && teesandcees.checked) {
         const ifPetName = () => {

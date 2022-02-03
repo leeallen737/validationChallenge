@@ -55,6 +55,10 @@ body {
     font-family: inherit;
 }
 
+#form-container input:focus {
+    outline: none;
+}
+
 #form-container.success input {
     border-color: #2ecc71;
 }

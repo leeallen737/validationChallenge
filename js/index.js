@@ -166,7 +166,9 @@ form.addEventListener('submit', (event) => {
 //     }
 // }
 
-    if(nickName.value && age.value && faveColor.value && teesandcees.checked) {
+    const isIt7 = turn3Into6Hash(faveColor.value)
+
+    if(nickName.value && age.value && isIt7.length === 7 && teesandcees.checked) {
         const ifPetName = () => {
             if(pet.checked) {
                 return `my pet is called ${petName.value}`;

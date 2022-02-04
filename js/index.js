@@ -138,6 +138,7 @@ form.addEventListener('submit', (event) => {
     } else {
         errorMessageColor.parentNode.className = 'success';
         body.style.backgroundColor = faveColor.value;
+        body.style.transition = '3s';
 
         messageBox.innerHTML = `Hi my nickname is: ${nickName.value},<br>
                             my age is: ${age.value}<br>

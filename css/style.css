@@ -141,6 +141,24 @@ body {
     cursor: pointer;
 }
 
+#form #reset {
+    background-color: #fff;
+    margin-top: 10px;
+    border: 2px solid #000;
+    color: #000;
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#form #reset:hover {
+    background-color: #e74c3c;
+    transition: 1s;
+}
+
 #message-box {
     display: none;
     margin: 0 30px;
